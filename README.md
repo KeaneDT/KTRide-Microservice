@@ -115,4 +115,4 @@ This microservice provides a set of endpoints for managing driver information. I
 
 - To get a random 'Available' driver and set their status to 'Busy': "GET /api/v1/ride"
 
-- To det driver's status with ID 123456 to 'Available': "GET /api/v1/ride/123456"
+- To set driver's status with ID 123456 to 'Available': "GET /api/v1/ride/123456"
