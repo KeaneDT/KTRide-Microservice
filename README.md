@@ -8,6 +8,15 @@ When the user interacts with the Interface Microservice, API calls are made to t
 
 <br />
 
+## Design Considerations
+When developing the Microservices, I followed the Domain-Driven Design (DDD) Development Approah which requires various sub-domains and domain contexts to be created. These domain contexts have to correspond with the various features of the platform which are Passengers and Drivers. As such Passengers and Drivers was made into seperate Microservices. I had to ensure that the databases both of these Microservices were kept seperate from one another as this is a practice in DDD.
+
+Another consideration was making sure that the Interface Microservice which is meant to make API calls to the other 2 Microservices, does not retrieve any data directly from a database. This is because only the relevant sub-domains should be able to access their respective database as they are within the same domain context. This practice also helps ensure that the databases are kept secure and can only retrieve or insert data through API calls.
+
+The last consideration was making the calls between the Passenger and Driver Microservices. In the Ride Platform, the Driver is required to Start or Stop a Ride. As such the Passenger Microservice which contains the Ride Table needs to make call back and forth to the Driver Microservice.
+
+<br />
+
 ## User Guide for KTRide Service Console Application
 
 This console application allows users to login as either passengers or drivers and use the ride service. Passengers can book rides, view their ride history, and cancel rides. Drivers can view their pending rides and accept or decline them.
