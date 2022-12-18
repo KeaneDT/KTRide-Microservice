@@ -1,6 +1,13 @@
 # KTRide-Microservices
 3 Microservices, Passenger, Driver, and Interface created for a Ride-Sharing Platform. All the files are created using GoLang.
 
+## Microservice Architechture Diagram
+![image](https://user-images.githubusercontent.com/73068271/208278888-4036ec65-4d6c-433b-bd9b-62985b66579c.png)
+
+When the user interacts with the Interface Microservice, API calls are made to the Passenger and Driver Microservices. These Microservices may also call each other to process data. The Passenger Microservice is connected to the Passengers Database with 2 tables, Passengers and Rides. The Driver Microservice is connected to the Drivers Database with 1 table, Drivers.
+
+<br />
+
 ## User Guide for KTRide Service Console Application
 
 This console application allows users to login as either passengers or drivers and use the ride service. Passengers can book rides, view their ride history, and cancel rides. Drivers can view their pending rides and accept or decline them.
